@@ -1,0 +1,24 @@
+{
+  "name": "leviton-js",
+  "version": "1.0.0",
+  "description": "Node library to support basic Leviton Decora Smart Wifi switches",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "leviton",
+    "decora",
+    "smart",
+    "wifi",
+    "switch"
+  ],
+  "author": "tabrindle@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "inquirer": "^7.1.0"
+  }
+}
