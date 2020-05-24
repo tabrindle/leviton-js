@@ -4,10 +4,10 @@
 
 A simple API wrapper for using Leviton Decora Smart Wifi switches and outlets. Tested using models:
 
-- DW1KD
-- DW15P
-- DW6HD
-- DW3HL
+-   DW1KD
+-   DW15P
+-   DW6HD
+-   DW3HL
 
 ## Installation
 

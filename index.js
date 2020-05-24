@@ -5,6 +5,12 @@ const toQueryString = params => Object.keys(params)
   .map(key => `${key}=${params[key]}`)
   .join('&');
 
+/**
+ * getResidenceIotSwitches - get devices given a residenceID
+ *
+ * @param {string}
+ * @param {string} token - user token
+ */
 function getResidenceIotSwitches({ residenceID, token }) {
   return fetch(`${baseURL}/Residences/${residenceID}/iotSwitches`, {
     method: 'GET',
@@ -16,6 +22,12 @@ function getResidenceIotSwitches({ residenceID, token }) {
     .then((res) => res.json())
 }
 
+/**
+ * getIotSwitch - get details on switch - power state, brightness etc
+ *
+ * @param {string} switchID
+ * @param {string} token - user token
+ */
 function getIotSwitch({ switchID, token }) {
   return fetch(`${baseURL}/IotSwitches/${switchID}`, {
     method: 'GET',
@@ -27,6 +39,14 @@ function getIotSwitch({ switchID, token }) {
     .then((res) => res.json())
 }
 
+/**
+ * putIotSwitch - update power or brightness state
+ *
+ * @param {string} switchID - switch identifier
+ * @param {string} power - 'ON' or 'OFF' state
+ * @param {number} brightness - integer between 1-100
+ * @param {string} token - user token
+ */
 function putIotSwitch({ switchID, power, brightness, token }) {
   return fetch(`${baseURL}/IotSwitches/${switchID}`, {
     method: 'PUT',
@@ -39,6 +59,12 @@ function putIotSwitch({ switchID, power, brightness, token }) {
     .then((res) => res.json())
 }
 
+/**
+ * getPersonResidentialPermissions - returns residenceIDs associated to personID
+ *
+ * @param {string} personID - userId to get accountID
+ * @param {string} token - user token
+ */
 function getPersonResidentialPermissions({ personID, token }) {
   return fetch(`${baseURL}/Person/${personID}/residentialPermissions`, {
     method: 'GET',
@@ -50,6 +76,12 @@ function getPersonResidentialPermissions({ personID, token }) {
     .then((res) => res.json())
 }
 
+/**
+ * getResidentialAccounts - get residenceIDs given accountID
+ *
+ * @param {string} accountID -account identifer
+ * @param {string} token - user token
+ */
 function getResidentialAccounts({ accountID, token }) {
   return fetch(`${baseURL}/ResidentialAccounts/${accountID}`, {
     method: 'GET',
@@ -61,6 +93,12 @@ function getResidentialAccounts({ accountID, token }) {
     .then((res) => res.json())
 }
 
+/**
+ * postPersonLogin - used to get user token given email/pass
+ *
+ * @param {string} email
+ * @param {string} password
+ */
 function postPersonLogin({ email, password }) {
   const query = toQueryString({
     include: 'user'
